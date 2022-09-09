@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import get from "./CustomHooks/GET";
 
@@ -7,7 +7,7 @@ const UserCard = () => {
 
   const[data, setData] = React.useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     get("http://localhost:8080/users/getAll", setData)
   }, []);
   

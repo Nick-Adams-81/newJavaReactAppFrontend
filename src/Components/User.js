@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState }from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
@@ -10,21 +10,12 @@ import post from "./CustomHooks/POST"
 const User = () => {
 
 
-    const [username, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
+    const [username, setName] = useState("");
+    const [email, setEmail] = useState("");
 
     const handleClick = () => {
         const user = { username, email };
         console.log(user);
-        // fetch("http://localhost:8080/users/save", {
-        //     method: "POST",
-        //     headers: { "Content-type": "application/json" },
-        //     body: JSON.stringify(user)
-
-        // })
-        //     .then(() => {
-        //         console.log("new user added")
-        //     })
         post("http://localhost:8080/users/save", user);
 
     }
