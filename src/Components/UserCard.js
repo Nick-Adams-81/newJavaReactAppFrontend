@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
+import get from "./CustomHooks/GET";
 
 
 const UserCard = () => {
@@ -7,9 +8,7 @@ const UserCard = () => {
   const[data, setData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:8080/users/getAll")
-    .then(res => res.json())
-    .then(result => setData(result))
+    get("http://localhost:8080/users/getAll", setData)
   }, []);
   
 
