@@ -4,26 +4,29 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import post from "./CustomHooks/POST"
 
 
 const User = () => {
 
 
-    const[username, setName] = React.useState("");
-    const[email, setEmail] = React.useState("");
+    const [username, setName] = React.useState("");
+    const [email, setEmail] = React.useState("");
 
     const handleClick = () => {
-        const user = {username, email};
+        const user = { username, email };
         console.log(user);
-        fetch("http://localhost:8080/users/save",{
-        method:"POST",
-        headers:{"Content-type": "application/json"},
-        body: JSON.stringify(user)
+        // fetch("http://localhost:8080/users/save", {
+        //     method: "POST",
+        //     headers: { "Content-type": "application/json" },
+        //     body: JSON.stringify(user)
 
-        })
-        .then(() => {
-            console.log("new user added")
-        })
+        // })
+        //     .then(() => {
+        //         console.log("new user added")
+        //     })
+        post("http://localhost:8080/users/save", user);
+
     }
 
     return (
@@ -36,24 +39,24 @@ const User = () => {
             autoComplete="off"
         >
             <Container>
-                <Paper elevation={1} style={{padding: 10}}>
-                    <h1 style={{color: "blue"}}>Add a User</h1>
+                <Paper elevation={1} style={{ padding: 10 }}>
+                    <h1 style={{ color: "blue" }}>Add a User</h1>
                     <form>
-                        <TextField 
-                        id="outlined-basic" 
-                        label="Username" 
-                        variant="outlined" 
-                        style={{margin: 2}} 
-                        value={username}
-                        onChange={(e) => setName(e.target.value)}
+                        <TextField
+                            id="outlined-basic"
+                            label="Username"
+                            variant="outlined"
+                            style={{ margin: 2 }}
+                            value={username}
+                            onChange={(e) => setName(e.target.value)}
                         />
-                        <TextField 
-                        id="outlined-basic" 
-                        label="Email" 
-                        variant="outlined" 
-                        style={{margin: 2}} 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        <TextField
+                            id="outlined-basic"
+                            label="Email"
+                            variant="outlined"
+                            style={{ margin: 2 }}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <Button variant="contained" color="secondary" onClick={() => handleClick()}>Save</Button>
                     </form>
