@@ -1,5 +1,6 @@
 import Appbar from "./Components/Appbar";
 import User from "./Components/User";
+import UserCard from "./Components/UserCard";
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Appbar />
       <User />
+      <UserCard />
     </div>
   );
 }
