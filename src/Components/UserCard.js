@@ -12,6 +12,7 @@ const UserCard = () => {
 
   useEffect(() => {
     get("http://localhost:8080/users/getAll", setData)
+    console.log(data)
   }, []);
 
 
@@ -20,7 +21,7 @@ const UserCard = () => {
       <h1>User info</h1>
       <Paper elevation={3}>
         {data.map(data => (
-          <h2 key={data.id}>
+          <Paper key={data.id} variant="outlined" style={{width: 300, padding: 5, margin:5, marginLeft: 500}}>
             <p>user: {data.username}</p>
             <p>email: {data.email}</p>
             <Chip
@@ -35,7 +36,7 @@ const UserCard = () => {
             >
               Delete
             </Chip>
-          </h2>
+          </Paper>
         ))}
 
       </Paper>
