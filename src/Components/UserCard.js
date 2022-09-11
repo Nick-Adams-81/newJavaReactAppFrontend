@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import get from "./CustomHooks/GET";
 import Chip from '@mui/joy/Chip';
@@ -8,12 +8,16 @@ import deleteUser from "./CustomHooks/DELETE";
 
 const UserCard = () => {
 
-  const [data, setData] = React.useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     get("http://localhost:8080/users/getAll", setData)
     console.log(data)
   }, []);
+
+  // const removeUser = (id) => {
+  //   setData(current => current.filter(user => {return user.id !== id}));
+  // }
 
 
   return (
