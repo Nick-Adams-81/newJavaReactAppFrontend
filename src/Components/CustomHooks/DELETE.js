@@ -7,5 +7,9 @@ const deleteUser = (id) => {
     })
     .then(() => console.log("user deleted successfully!"))
     .catch((err) => console.log(err))
+
+    // const removeUser = (id) => {
+    //     setData(current => current.filter(user => {return user.id !== id}));
+    //   }
 }
 export default deleteUser;
