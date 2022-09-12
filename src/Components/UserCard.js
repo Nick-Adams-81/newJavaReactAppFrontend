@@ -12,9 +12,9 @@ const UserCard = () => {
 
   useEffect(() => {
     get("http://localhost:8080/users/getAll", setData)
-    console.log(data)
   }, []);
 
+  
   // const removeUser = (id) => {
   //   setData(current => current.filter(user => {return user.id !== id}));
   // }
