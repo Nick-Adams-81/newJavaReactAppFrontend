@@ -17,6 +17,7 @@ const User = () => {
         const user = { username, email };
         console.log(user);
         post("http://localhost:8080/users/save", user);
+        window.location.reload()
 
     }
 

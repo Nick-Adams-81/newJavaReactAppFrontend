@@ -15,11 +15,6 @@ const UserCard = () => {
   }, []);
 
   
-  // const removeUser = (id) => {
-  //   setData(current => current.filter(user => {return user.id !== id}));
-  // }
-
-
   return (
     <>
       <h1>User info</h1>
