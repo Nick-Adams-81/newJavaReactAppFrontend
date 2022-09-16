@@ -7,9 +7,7 @@ const post = (url, data) => {
         body: JSON.stringify(data)
 
     })
-        .then(() => {
-            console.log("new user added")
-        })
+        .then(() => console.log("new user added"))
 
 }
 
